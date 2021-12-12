@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "accuracies",
+  "info": {
+    "singularName": "accuracy",
+    "pluralName": "accuracies",
+    "displayName": "Accuracy",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "accuracy": {
+      "type": "decimal",
+      "required": true
+    },
+    "deck": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::deck.deck",
+      "inversedBy": "accuracies"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "accuracies"
+    }
+  }
+}
